@@ -1,0 +1,10 @@
+.movieCard {
+  display: flex;
+}
+.movieInfo {
+  margin-left: 20px;
+}
+
+.trending {
+  margin: 30px;
+}
