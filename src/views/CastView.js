@@ -24,8 +24,9 @@ export default function CastView({ movieId }) {
                 <img
                   width="150"
                   src={
-                    el.profile_path &&
-                    `https://image.tmdb.org/t/p/w500${el.profile_path}`
+                    el.profile_path
+                      ? `https://image.tmdb.org/t/p/w500${el.profile_path}`
+                      : `https://cdn-icons-png.flaticon.com/512/2748/2748638.png`
                   }
                   alt={el.name}
                 />

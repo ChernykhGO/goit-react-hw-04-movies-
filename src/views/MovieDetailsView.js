@@ -31,6 +31,7 @@ export default function MovieDetailsView() {
   const location = useLocation();
   // console.log(location);
   const history = useHistory();
+  // console.log(history);
 
   useEffect(() => {
     movieApi
@@ -45,7 +46,6 @@ export default function MovieDetailsView() {
 
   return (
     <>
-      {/* <PageHeading text={`Фильм нашелся`} /> */}
       <button type="button" onClick={onGoBack}>
         Назад
       </button>
@@ -85,11 +85,25 @@ export default function MovieDetailsView() {
 
           <ul>
             <li>
-              <NavLink to={`${url}/cast`}>Cast</NavLink>
+              <NavLink
+                to={{
+                  pathname: `${url}/cast`,
+                  state: { from: location.state.from },
+                }}
+              >
+                Cast
+              </NavLink>
             </li>
 
             <li>
-              <NavLink to={`${url}/reviews`}>Reviews</NavLink>
+              <NavLink
+                to={{
+                  pathname: `${url}/reviews`,
+                  state: { from: location.state.from },
+                }}
+              >
+                Reviews
+              </NavLink>
             </li>
           </ul>
 
